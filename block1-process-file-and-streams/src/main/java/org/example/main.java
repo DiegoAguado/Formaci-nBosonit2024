@@ -20,7 +20,7 @@ public class main {
 
     private static List<Person> getPeople(){
         List<Person> listPeople = new ArrayList<>();
-            Path path = Paths.get("src/main/java/org/example/people.csv");
+            Path path = Paths.get("block1-process-file-and-streams/src/main/java/org/example/people.csv");
 
         List<String> personas = null;
         try {
