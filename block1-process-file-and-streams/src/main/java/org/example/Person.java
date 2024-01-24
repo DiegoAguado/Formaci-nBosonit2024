@@ -5,6 +5,12 @@ public class Person {
     private String town;
     private int age;
 
+    public Person(String name) {
+        this.name = name;
+        this.town = "";
+        this.age = 0;
+    }
+
     public Person(String name, String town, int age) {
         this.name = name;
         this.town = town;

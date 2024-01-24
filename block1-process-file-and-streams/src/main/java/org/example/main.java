@@ -15,7 +15,7 @@ public class main {
             System.out.println(p.toString());
         }
         //System.out.println();
-        //filterAgeStream();
+        filterAgeStream();
     }
 
     private static List<Person> getPeople(){
@@ -75,7 +75,7 @@ public class main {
                         .filter(person -> person.getTown().equals("Madrid"))
                 .findFirst();
 
-        System.out.println(optional.isEmpty()?"No hay coincidencias":optional.get());
+        System.out.println(optional.orElse(new Person("No hay registros")).getName());
     }
 
     private static void filterAgeStream(){
@@ -85,6 +85,6 @@ public class main {
                 filter(person -> person.getTown().equals("Barcelona"))
                 .findFirst();
 
-        System.out.println(optional.isEmpty()?"No hay coincidencias":optional.get());
+        System.out.println(optional.orElse(new Person("No hay registros")).getName());
     }
 }
