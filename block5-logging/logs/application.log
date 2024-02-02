@@ -1,0 +1,3 @@
+2024-02-02T08:29:01.725+01:00 ERROR 11396 --- [main] c.b.formacion.block5logging.Component    : Mensaje a nivel de ERROR
+2024-02-02T08:29:22.677+01:00 ERROR 7996 --- [main] c.b.formacion.block5logging.Component    : Mensaje a nivel de ERROR
+2024-02-02T08:29:28.961+01:00 ERROR 15908 --- [main] c.b.formacion.block5logging.Component    : Mensaje a nivel de ERROR
