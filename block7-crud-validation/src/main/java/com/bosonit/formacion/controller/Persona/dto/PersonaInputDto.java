@@ -1,9 +1,8 @@
-package com.bosonit.formacion.controller.dto;
+package com.bosonit.formacion.controller.Persona.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.util.Date;
 @Data
 @NoArgsConstructor
@@ -19,6 +18,8 @@ public class PersonaInputDto {
     String city;
     boolean active;
     Date created_date;
+    Date updatedAt;
     String imagen_url;
     Date termination_date;
+    boolean esStudent;
 }

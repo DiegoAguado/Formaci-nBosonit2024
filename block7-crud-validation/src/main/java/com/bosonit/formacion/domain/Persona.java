@@ -1,16 +1,12 @@
 package com.bosonit.formacion.domain;
 
-import com.bosonit.formacion.controller.dto.PersonaInputDto;
-import com.bosonit.formacion.controller.dto.PersonaOutputDto;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.bosonit.formacion.controller.Persona.dto.PersonaInputDto;
+import com.bosonit.formacion.controller.Persona.dto.PersonaOutputDto;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.util.Date;
 
 @Getter
@@ -23,6 +19,7 @@ public class Persona {
     @Id
     @GeneratedValue
     private int id_persona;
+
     private String usuario;
     private String password;
     private String name;
@@ -32,8 +29,12 @@ public class Persona {
     private String city;
     private boolean active;
     private Date created_date;
+    private Date updatedAt;
     private String imagen_url;
     private Date termination_date;
+
+    boolean esStudent;
+
 
     public Persona(PersonaInputDto persona){
         this.id_persona = persona.getId_persona();
@@ -46,8 +47,10 @@ public class Persona {
         this.city = persona.getCity();
         this.active = persona.isActive();
         this.created_date = persona.getCreated_date();
+        this.updatedAt = persona.getUpdatedAt();
         this.imagen_url = persona.getImagen_url();
         this.termination_date = persona.getTermination_date();
+        this.esStudent = persona.isEsStudent();
     }
 
     public PersonaOutputDto personaToPersonaOutputDto(){
@@ -61,6 +64,7 @@ public class Persona {
                 this.city,
                 this.active,
                 this.created_date,
+                this.updatedAt,
                 this.imagen_url,
                 this.termination_date
         );
