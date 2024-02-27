@@ -23,7 +23,7 @@ public class ProfesorController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ProfesorOutputDto> getProfesorById(@RequestParam String id) throws EntityNotFoundException{
+    public ResponseEntity<ProfesorOutputDto> getProfesorById(@PathVariable String id) throws EntityNotFoundException{
         return ResponseEntity.ok().body(profesorService.getProfesorById(id));
     }
 
