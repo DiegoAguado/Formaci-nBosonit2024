@@ -1,0 +1,16 @@
+version: "3.2"
+services:
+  block10app:
+    build: .
+    ports:
+      - "8080:8080"
+    links:
+      - server
+  server:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: contrasena
+      POSTGRES_DB: test
