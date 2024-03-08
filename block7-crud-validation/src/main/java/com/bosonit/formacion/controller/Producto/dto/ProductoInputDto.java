@@ -1,2 +1,14 @@
-package com.bosonit.formacion.controller.Producto.dto;public class ProductoInputDto {
+package com.bosonit.formacion.controller.Producto.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class ProductoInputDto {
+    String id;
+    String descripcion;
+    float precio;
 }

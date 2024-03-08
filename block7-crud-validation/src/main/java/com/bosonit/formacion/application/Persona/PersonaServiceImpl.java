@@ -43,6 +43,11 @@ public class PersonaServiceImpl implements PersonaService {
 
         return personaRepository.findAll(pageRequest).getContent().stream().map(Persona::personaToPersonaOutputDto).toList();
     }
+
+    @Override
+    public List<PersonaOutputDto> getAllPersonas(){
+        return personaRepository.findAll().stream().map(Persona::personaToPersonaOutputDto).toList();
+    }
     @Override
     public List<PersonaOutputDto> getAllPersonasByUsuarioLike(String usuario){
         return personaRepository.findByUsuarioLike(usuario).stream().map(Persona::personaToPersonaOutputDto).toList();

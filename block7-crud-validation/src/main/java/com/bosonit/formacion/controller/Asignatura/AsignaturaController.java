@@ -42,8 +42,7 @@ public class AsignaturaController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteAsignaturaById(@PathVariable String id) throws EntityNotFoundException{
+    public void deleteAsignaturaById(@PathVariable String id) throws EntityNotFoundException{
         asignaturaService.deleteAsignaturaById(id);
-        return ResponseEntity.ok().body("Asignatura with id " + id + " was deleted");
     }
 }

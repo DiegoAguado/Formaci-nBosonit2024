@@ -38,7 +38,7 @@ public class ProfesorController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteProfesorById(@RequestParam String id) throws EntityNotFoundException{
-        return ResponseEntity.ok().body("Profesor with id " + id + " was deleted");
+    public void deleteProfesorById(@RequestParam String id) throws EntityNotFoundException{
+        profesorService.deleteProfesorById(id);
     }
 }

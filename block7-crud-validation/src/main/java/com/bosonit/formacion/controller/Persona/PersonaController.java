@@ -21,17 +21,13 @@ import org.springframework.web.client.RestTemplate;
 import java.util.List;
 
 @RestController
-@RequestMapping("/persona")
+//@RequestMapping("/persona")
 public class PersonaController {
     @Autowired
     PersonaService personaService;
 
     @Autowired
     ProfesorFeign profesorFeign;
-
-    /*
-    * SWAGGER
-     */
 
     @PostMapping
     public ResponseEntity<PersonaOutputDto> addPersona(@RequestBody PersonaInputDto persona) throws UnprocessableEntityException{
@@ -59,22 +55,32 @@ public class PersonaController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deletePersonaById(@PathVariable int id) throws EntityNotFoundException{
+    public void deletePersonaById(@PathVariable int id) throws EntityNotFoundException{
         personaService.deletePersonaById(id);
-        return ResponseEntity.ok().body("Persona with id " + id + " was deleted");
     }
 
     @GetMapping("/profesor/restTemplate/{id}")
-    public ResponseEntity<ProfesorOutputDto> getProfesorByIdRestTemplate(@PathVariable String id) throws EntityNotFoundException{
+    public ProfesorOutputDto getProfesorByIdRestTemplate(@PathVariable String id) throws EntityNotFoundException{
         String url = "http://localhost:8081/profesor/" + id;
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<ProfesorOutputDto> responseEntity = restTemplate.getForEntity(url, ProfesorOutputDto.class);
-        return responseEntity;
+        return responseEntity.getBody();
     }
 
     @GetMapping("/profesor/feign/{id}")
-    public ResponseEntity<ProfesorOutputDto> getProfesorByIdFeign(@PathVariable String id) throws EntityNotFoundException{
+    public ProfesorOutputDto getProfesorByIdFeign(@PathVariable String id) throws EntityNotFoundException{
         ResponseEntity<ProfesorOutputDto> profesor = profesorFeign.getProfesorById(id);
-        return profesor;
+        return profesor.getBody();
+    }
+
+    //CORS endpoints
+    @GetMapping("/getall")
+    public ResponseEntity<List<PersonaOutputDto>> getAllPersonasCORS(){
+        return ResponseEntity.ok().body(personaService.getAllPersonas());
+    }
+
+    @PostMapping("/addperson")
+    public ResponseEntity<PersonaOutputDto> addPersonaCORS(@RequestBody PersonaInputDto persona) throws UnprocessableEntityException{
+        return ResponseEntity.ok().body(personaService.addPersona(persona));
     }
 }

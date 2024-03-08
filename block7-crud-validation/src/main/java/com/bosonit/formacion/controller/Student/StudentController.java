@@ -53,7 +53,7 @@ public class StudentController {
     }
 
     @DeleteMapping("/asignaturas/{id}")
-    public ResponseEntity<StudentOutputDto> deleteAsignaturasToStudent(@PathVariable String id, @RequestBody List<String> id_asignatura) throws EntityNotFoundException {
-        return ResponseEntity.ok().body(studentService.deleteAsignaturasToStudent(id, id_asignatura));
+    public void deleteAsignaturasToStudent(@PathVariable String id, @RequestBody List<String> id_asignatura) throws EntityNotFoundException {
+        studentService.deleteAsignaturasToStudent(id, id_asignatura);
     }
 }
