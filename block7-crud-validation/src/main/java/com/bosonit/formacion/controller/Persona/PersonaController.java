@@ -9,25 +9,30 @@ import com.bosonit.formacion.controller.Profesor.dto.ProfesorOutputDto;
 import com.bosonit.formacion.customException.EntityNotFoundException;
 import com.bosonit.formacion.customException.UnprocessableEntityException;
 import com.bosonit.formacion.domain.Profesor;
+import com.bosonit.formacion.repository.PersonaRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletRequestWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 @RestController
-//@RequestMapping("/persona")
+@RequestMapping("/persona")
 public class PersonaController {
     @Autowired
     PersonaService personaService;
-
     @Autowired
     ProfesorFeign profesorFeign;
+    @Autowired
+    PersonaRepository personaRepository;
 
     @PostMapping
     public ResponseEntity<PersonaOutputDto> addPersona(@RequestBody PersonaInputDto persona) throws UnprocessableEntityException{
@@ -82,5 +87,36 @@ public class PersonaController {
     @PostMapping("/addperson")
     public ResponseEntity<PersonaOutputDto> addPersonaCORS(@RequestBody PersonaInputDto persona) throws UnprocessableEntityException{
         return ResponseEntity.ok().body(personaService.addPersona(persona));
+    }
+
+    //endpoint con usuario name surname created_date superior o inferior ordenar por user o name
+    @GetMapping("/buscar")
+    public Iterable<PersonaOutputDto> searchPersonas(
+            @RequestParam(required = false) String usuario,
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String surname,
+            @RequestParam(required = false) @DateTimeFormat(pattern="yyyy/MM/dd") Date created_date,
+            @RequestParam(required = false) String datecondition,
+            @RequestParam(required = false) String orderBy,
+            @RequestParam(defaultValue = "10") Integer pageSize, @RequestParam Integer pageNumber
+    ){
+        HashMap<String, Object> conditions = new HashMap<>();
+        if (usuario!=null)
+            conditions.put("usuario", usuario);
+        if (name!=null)
+            conditions.put("name", name);
+        if (surname!=null)
+            conditions.put("surname", surname);
+        if (created_date!=null)
+            conditions.put("created_date", created_date);
+        if (datecondition!=null)
+            conditions.put("datecondition", datecondition);
+        if (orderBy!=null)
+            conditions.put("orderBy", orderBy);
+
+        conditions.put("pageSize", pageSize);
+        conditions.put("pageNumber", pageNumber);
+
+        return personaRepository.searchPersonas(conditions);
     }
 }
