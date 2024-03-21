@@ -1,0 +1,1 @@
+mvn clean verify sonar:sonar -Dsonar.projectKey=crud -Dsonar.projectName='crud' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_6cd0db14f2a57e8dad0cd64d385036fa63fc6641

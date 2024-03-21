@@ -8,12 +8,12 @@ import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.context.annotation.Primary;
 
 @Entity
-@Data
+@Setter
 @NoArgsConstructor
-@AllArgsConstructor
 public class Persona {
     @Id
     @GeneratedValue
