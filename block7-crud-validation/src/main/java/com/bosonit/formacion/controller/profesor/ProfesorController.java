@@ -1,8 +1,8 @@
-package com.bosonit.formacion.controller.Profesor;
+package com.bosonit.formacion.controller.profesor;
 
-import com.bosonit.formacion.application.Profesor.ProfesorService;
-import com.bosonit.formacion.controller.Profesor.dto.ProfesorInputDto;
-import com.bosonit.formacion.controller.Profesor.dto.ProfesorOutputDto;
+import com.bosonit.formacion.application.profesor.ProfesorService;
+import com.bosonit.formacion.controller.profesor.dto.ProfesorInputDto;
+import com.bosonit.formacion.controller.profesor.dto.ProfesorOutputDto;
 import com.bosonit.formacion.customException.EntityNotFoundException;
 import com.bosonit.formacion.customException.UnprocessableEntityException;
 import org.springframework.beans.factory.annotation.Autowired;

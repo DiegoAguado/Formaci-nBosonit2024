@@ -1,6 +1,5 @@
-package com.bosonit.formacion.controller.Profesor.dto;
+package com.bosonit.formacion.controller.profesor.dto;
 
-import com.bosonit.formacion.domain.Persona;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

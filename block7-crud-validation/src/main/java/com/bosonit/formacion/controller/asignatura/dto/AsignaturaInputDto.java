@@ -1,4 +1,4 @@
-package com.bosonit.formacion.controller.Asignatura.dto;
+package com.bosonit.formacion.controller.asignatura.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

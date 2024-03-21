@@ -1,21 +1,15 @@
-package com.bosonit.formacion.controller.Persona;
+package com.bosonit.formacion.controller.persona;
 
-import com.bosonit.formacion.Feign.ProfesorFeign;
-import com.bosonit.formacion.application.Persona.PersonaService;
-import com.bosonit.formacion.application.Profesor.ProfesorService;
-import com.bosonit.formacion.controller.Persona.dto.PersonaInputDto;
-import com.bosonit.formacion.controller.Persona.dto.PersonaOutputDto;
-import com.bosonit.formacion.controller.Profesor.dto.ProfesorOutputDto;
+import com.bosonit.formacion.feign.ProfesorFeign;
+import com.bosonit.formacion.application.persona.PersonaService;
+import com.bosonit.formacion.controller.persona.dto.PersonaInputDto;
+import com.bosonit.formacion.controller.persona.dto.PersonaOutputDto;
+import com.bosonit.formacion.controller.profesor.dto.ProfesorOutputDto;
 import com.bosonit.formacion.customException.EntityNotFoundException;
 import com.bosonit.formacion.customException.UnprocessableEntityException;
-import com.bosonit.formacion.domain.Profesor;
 import com.bosonit.formacion.repository.PersonaRepository;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletRequestWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;

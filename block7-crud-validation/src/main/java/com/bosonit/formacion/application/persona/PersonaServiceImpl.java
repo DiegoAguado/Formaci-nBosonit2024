@@ -1,9 +1,9 @@
-package com.bosonit.formacion.application.Persona;
+package com.bosonit.formacion.application.persona;
 
-import com.bosonit.formacion.controller.Persona.dto.PersonaInputDto;
-import com.bosonit.formacion.controller.Persona.dto.PersonaOutputDto;
-import com.bosonit.formacion.controller.Persona.dto.PersonaProfesorOutputDto;
-import com.bosonit.formacion.controller.Persona.dto.PersonaStudentOutputDto;
+import com.bosonit.formacion.controller.persona.dto.PersonaInputDto;
+import com.bosonit.formacion.controller.persona.dto.PersonaOutputDto;
+import com.bosonit.formacion.controller.persona.dto.PersonaProfesorOutputDto;
+import com.bosonit.formacion.controller.persona.dto.PersonaStudentOutputDto;
 import com.bosonit.formacion.domain.Persona;
 import com.bosonit.formacion.customException.EntityNotFoundException;
 import com.bosonit.formacion.customException.UnprocessableEntityException;

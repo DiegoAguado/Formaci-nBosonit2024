@@ -1,8 +1,8 @@
-package com.bosonit.formacion.application.Student;
+package com.bosonit.formacion.application.student;
 
-import com.bosonit.formacion.controller.Student.dto.StudentFullOutputDto;
-import com.bosonit.formacion.controller.Student.dto.StudentInputDto;
-import com.bosonit.formacion.controller.Student.dto.StudentOutputDto;
+import com.bosonit.formacion.controller.student.dto.StudentFullOutputDto;
+import com.bosonit.formacion.controller.student.dto.StudentInputDto;
+import com.bosonit.formacion.controller.student.dto.StudentOutputDto;
 import com.bosonit.formacion.customException.EntityNotFoundException;
 import com.bosonit.formacion.customException.UnprocessableEntityException;
 

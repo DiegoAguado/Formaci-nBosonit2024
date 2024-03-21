@@ -1,6 +1,6 @@
 package com.bosonit.formacion.repository;
 
-import com.bosonit.formacion.controller.Persona.dto.PersonaOutputDto;
+import com.bosonit.formacion.controller.persona.dto.PersonaOutputDto;
 import com.bosonit.formacion.domain.Persona;
 import org.springframework.data.jpa.repository.JpaRepository;
 

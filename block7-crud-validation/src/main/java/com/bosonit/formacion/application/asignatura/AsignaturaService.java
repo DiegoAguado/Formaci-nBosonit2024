@@ -1,7 +1,7 @@
-package com.bosonit.formacion.application.Asignatura;
+package com.bosonit.formacion.application.asignatura;
 
-import com.bosonit.formacion.controller.Asignatura.dto.AsignaturaInputDto;
-import com.bosonit.formacion.controller.Asignatura.dto.AsignaturaOutputDto;
+import com.bosonit.formacion.controller.asignatura.dto.AsignaturaInputDto;
+import com.bosonit.formacion.controller.asignatura.dto.AsignaturaOutputDto;
 import com.bosonit.formacion.customException.EntityNotFoundException;
 
 import java.util.List;

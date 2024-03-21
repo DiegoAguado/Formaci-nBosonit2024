@@ -1,8 +1,8 @@
-package com.bosonit.formacion.controller.Asignatura;
+package com.bosonit.formacion.controller.asignatura;
 
-import com.bosonit.formacion.application.Asignatura.AsignaturaService;
-import com.bosonit.formacion.controller.Asignatura.dto.AsignaturaInputDto;
-import com.bosonit.formacion.controller.Asignatura.dto.AsignaturaOutputDto;
+import com.bosonit.formacion.application.asignatura.AsignaturaService;
+import com.bosonit.formacion.controller.asignatura.dto.AsignaturaInputDto;
+import com.bosonit.formacion.controller.asignatura.dto.AsignaturaOutputDto;
 import com.bosonit.formacion.customException.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

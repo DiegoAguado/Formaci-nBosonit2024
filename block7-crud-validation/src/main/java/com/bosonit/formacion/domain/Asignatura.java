@@ -1,13 +1,12 @@
 package com.bosonit.formacion.domain;
 
-import com.bosonit.formacion.controller.Asignatura.dto.AsignaturaInputDto;
-import com.bosonit.formacion.controller.Asignatura.dto.AsignaturaOutputDto;
+import com.bosonit.formacion.controller.asignatura.dto.AsignaturaInputDto;
+import com.bosonit.formacion.controller.asignatura.dto.AsignaturaOutputDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.GenericGenerator;
 
 import java.util.ArrayList;
 import java.util.Date;

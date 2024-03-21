@@ -1,7 +1,7 @@
-package com.bosonit.formacion.application.Profesor;
+package com.bosonit.formacion.application.profesor;
 
-import com.bosonit.formacion.controller.Profesor.dto.ProfesorInputDto;
-import com.bosonit.formacion.controller.Profesor.dto.ProfesorOutputDto;
+import com.bosonit.formacion.controller.profesor.dto.ProfesorInputDto;
+import com.bosonit.formacion.controller.profesor.dto.ProfesorOutputDto;
 import com.bosonit.formacion.customException.EntityNotFoundException;
 import com.bosonit.formacion.customException.UnprocessableEntityException;
 

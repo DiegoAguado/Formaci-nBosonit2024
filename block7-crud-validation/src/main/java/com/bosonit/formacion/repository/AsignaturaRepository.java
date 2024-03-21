@@ -1,7 +1,6 @@
 package com.bosonit.formacion.repository;
 
 import com.bosonit.formacion.domain.Asignatura;
-import com.bosonit.formacion.domain.Profesor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.repository.JpaRepository;

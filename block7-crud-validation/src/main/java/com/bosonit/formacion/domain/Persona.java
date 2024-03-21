@@ -1,7 +1,7 @@
 package com.bosonit.formacion.domain;
 
-import com.bosonit.formacion.controller.Persona.dto.PersonaInputDto;
-import com.bosonit.formacion.controller.Persona.dto.PersonaOutputDto;
+import com.bosonit.formacion.controller.persona.dto.PersonaInputDto;
+import com.bosonit.formacion.controller.persona.dto.PersonaOutputDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

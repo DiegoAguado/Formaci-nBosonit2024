@@ -1,13 +1,11 @@
-package com.bosonit.formacion.application.Profesor;
+package com.bosonit.formacion.application.profesor;
 
-import com.bosonit.formacion.application.Student.StudentService;
-import com.bosonit.formacion.controller.Profesor.dto.ProfesorInputDto;
-import com.bosonit.formacion.controller.Profesor.dto.ProfesorOutputDto;
+import com.bosonit.formacion.controller.profesor.dto.ProfesorInputDto;
+import com.bosonit.formacion.controller.profesor.dto.ProfesorOutputDto;
 import com.bosonit.formacion.customException.EntityNotFoundException;
 import com.bosonit.formacion.customException.UnprocessableEntityException;
 import com.bosonit.formacion.domain.Persona;
 import com.bosonit.formacion.domain.Profesor;
-import com.bosonit.formacion.domain.Student;
 import com.bosonit.formacion.repository.PersonaRepository;
 import com.bosonit.formacion.repository.ProfesorRepository;
 import com.bosonit.formacion.repository.StudentRepository;

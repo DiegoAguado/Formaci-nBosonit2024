@@ -1,6 +1,6 @@
-package com.bosonit.formacion.Feign;
+package com.bosonit.formacion.feign;
 
-import com.bosonit.formacion.controller.Profesor.dto.ProfesorOutputDto;
+import com.bosonit.formacion.controller.profesor.dto.ProfesorOutputDto;
 import com.bosonit.formacion.customException.EntityNotFoundException;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;

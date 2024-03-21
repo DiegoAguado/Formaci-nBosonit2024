@@ -1,12 +1,10 @@
-package com.bosonit.formacion.controller.Asignatura.dto;
+package com.bosonit.formacion.controller.asignatura.dto;
 
-import com.bosonit.formacion.domain.Student;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
-import java.util.List;
 
 @Data
 @NoArgsConstructor

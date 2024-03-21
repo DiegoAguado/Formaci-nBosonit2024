@@ -1,4 +1,4 @@
-package com.bosonit.formacion.controller.Persona.dto;
+package com.bosonit.formacion.controller.persona.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

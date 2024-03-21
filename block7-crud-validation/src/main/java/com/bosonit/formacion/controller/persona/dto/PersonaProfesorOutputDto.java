@@ -1,6 +1,5 @@
-package com.bosonit.formacion.controller.Persona.dto;
+package com.bosonit.formacion.controller.persona.dto;
 
-import com.bosonit.formacion.controller.Profesor.dto.ProfesorOutputDto;
 import com.bosonit.formacion.domain.Persona;
 import com.bosonit.formacion.domain.Profesor;
 import lombok.AllArgsConstructor;
@@ -10,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PersonaProfesorOutputDto extends PersonaOutputDto{
+public class PersonaProfesorOutputDto extends PersonaOutputDto {
     private String id_profesor;
     private String coments;
     private String branch;

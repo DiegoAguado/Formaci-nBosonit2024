@@ -1,17 +1,15 @@
-package com.bosonit.formacion.application.Student;
+package com.bosonit.formacion.application.student;
 
-import com.bosonit.formacion.controller.Student.dto.StudentFullOutputDto;
-import com.bosonit.formacion.controller.Student.dto.StudentInputDto;
-import com.bosonit.formacion.controller.Student.dto.StudentOutputDto;
+import com.bosonit.formacion.controller.student.dto.StudentFullOutputDto;
+import com.bosonit.formacion.controller.student.dto.StudentInputDto;
+import com.bosonit.formacion.controller.student.dto.StudentOutputDto;
 import com.bosonit.formacion.customException.EntityNotFoundException;
 import com.bosonit.formacion.customException.UnprocessableEntityException;
 import com.bosonit.formacion.domain.Asignatura;
 import com.bosonit.formacion.domain.Persona;
-import com.bosonit.formacion.domain.Profesor;
 import com.bosonit.formacion.domain.Student;
 import com.bosonit.formacion.repository.AsignaturaRepository;
 import com.bosonit.formacion.repository.PersonaRepository;
-import com.bosonit.formacion.repository.ProfesorRepository;
 import com.bosonit.formacion.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
