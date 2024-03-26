@@ -8,6 +8,10 @@ import com.bosonit.formacion.controller.profesor.dto.ProfesorOutputDto;
 import com.bosonit.formacion.customException.EntityNotFoundException;
 import com.bosonit.formacion.customException.UnprocessableEntityException;
 import com.bosonit.formacion.repository.PersonaRepository;
+import com.bosonit.formacion.security.auth.AuthenticationRequest;
+import com.bosonit.formacion.security.auth.AuthenticationResponse;
+import com.bosonit.formacion.security.auth.AuthenticationService;
+import com.bosonit.formacion.security.auth.RegisterRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
@@ -28,8 +32,12 @@ public class PersonaController {
     @Autowired
     PersonaRepository personaRepository;
 
+    @Autowired
+    AuthenticationService service;
+
     @PostMapping
     public ResponseEntity<PersonaOutputDto> addPersona(@RequestBody PersonaInputDto persona) throws UnprocessableEntityException{
+        service.register(new RegisterRequest(persona.getUsuario(), persona.getPassword(), persona.isAdmin()));
         return ResponseEntity.ok().body(personaService.addPersona(persona));
     }
 
@@ -43,9 +51,9 @@ public class PersonaController {
         return ResponseEntity.ok().body(personaService.getAllPersonas(pageNumber, pageSize));
     }
 
-    @GetMapping("/usuario/{usuario}")
-    public ResponseEntity<List<PersonaOutputDto>> getAllPersonasByUsuario(@PathVariable String usuario){
-        return ResponseEntity.ok().body(personaService.getAllPersonasByUsuarioLike(usuario));
+    @GetMapping("/name/{name}")
+    public ResponseEntity<List<PersonaOutputDto>> getAllPersonasByName(@PathVariable String name){
+        return ResponseEntity.ok().body(personaService.getAllPersonasByName(name));
     }
 
     @PutMapping
@@ -112,5 +120,10 @@ public class PersonaController {
         conditions.put("pageNumber", pageNumber);
 
         return personaRepository.searchPersonas(conditions);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<AuthenticationResponse> authenticate(@RequestBody AuthenticationRequest request){
+        return ResponseEntity.ok(service.authenticate(request));
     }
 }

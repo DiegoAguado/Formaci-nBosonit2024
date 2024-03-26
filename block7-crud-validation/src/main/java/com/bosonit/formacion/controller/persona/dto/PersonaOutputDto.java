@@ -21,4 +21,5 @@ public class PersonaOutputDto {
     Date updatedAt;
     String imagen_url;
     Date termination_date;
+    boolean admin;
 }

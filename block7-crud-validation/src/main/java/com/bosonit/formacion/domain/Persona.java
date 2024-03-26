@@ -3,19 +3,23 @@ package com.bosonit.formacion.domain;
 import com.bosonit.formacion.controller.persona.dto.PersonaInputDto;
 import com.bosonit.formacion.controller.persona.dto.PersonaOutputDto;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "persona")
-public class Persona {
+public class Persona{
     @Id
     @GeneratedValue
     private int id_persona;
@@ -34,6 +38,8 @@ public class Persona {
     private Date termination_date;
 
     boolean esStudent;
+    @Column(nullable = false)
+    boolean admin;
 
 
     public Persona(PersonaInputDto persona){
@@ -66,7 +72,8 @@ public class Persona {
                 this.created_date,
                 this.updatedAt,
                 this.imagen_url,
-                this.termination_date
+                this.termination_date,
+                this.admin
         );
     }
 }

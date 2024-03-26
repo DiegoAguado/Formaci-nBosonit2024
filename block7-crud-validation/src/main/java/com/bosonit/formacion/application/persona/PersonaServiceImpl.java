@@ -49,8 +49,8 @@ public class PersonaServiceImpl implements PersonaService {
         return personaRepository.findAll().stream().map(Persona::personaToPersonaOutputDto).toList();
     }
     @Override
-    public List<PersonaOutputDto> getAllPersonasByUsuarioLike(String usuario){
-        return personaRepository.findByUsuarioLike(usuario).stream().map(Persona::personaToPersonaOutputDto).toList();
+    public List<PersonaOutputDto> getAllPersonasByName(String name){
+        return personaRepository.findByNameLike(name).stream().map(Persona::personaToPersonaOutputDto).toList();
     }
     @Override
     public PersonaOutputDto updatePersona(PersonaInputDto persona) throws EntityNotFoundException, UnprocessableEntityException {

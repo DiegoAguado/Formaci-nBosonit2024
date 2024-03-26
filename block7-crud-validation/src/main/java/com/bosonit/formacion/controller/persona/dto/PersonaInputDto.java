@@ -22,4 +22,5 @@ public class PersonaInputDto {
     String imagen_url;
     Date termination_date;
     boolean esStudent;
+    boolean admin;
 }

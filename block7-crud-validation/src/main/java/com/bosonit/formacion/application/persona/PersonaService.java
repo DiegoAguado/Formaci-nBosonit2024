@@ -12,7 +12,7 @@ public interface PersonaService {
     PersonaOutputDto getPersonaById(int id, String outputType) throws EntityNotFoundException;
     List<PersonaOutputDto> getAllPersonas(int pageNumber, int pageSize);
     List<PersonaOutputDto> getAllPersonas();
-    List<PersonaOutputDto> getAllPersonasByUsuarioLike(String usuario);
+    List<PersonaOutputDto> getAllPersonasByName(String name);
     PersonaOutputDto updatePersona(PersonaInputDto persona) throws EntityNotFoundException, UnprocessableEntityException;
     void deletePersonaById(int id) throws EntityNotFoundException;
 }

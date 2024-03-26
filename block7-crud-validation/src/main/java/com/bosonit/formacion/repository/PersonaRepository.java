@@ -6,8 +6,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 
 public interface PersonaRepository extends JpaRepository<Persona, Integer> {
-    List<Persona> findByUsuarioLike(String usuario);
+    List<Persona> findByNameLike(String name);
     List<PersonaOutputDto> searchPersonas(HashMap<String, Object> conditions);
 }
