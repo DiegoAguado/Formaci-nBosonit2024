@@ -36,7 +36,7 @@ public class ReservaDisponibleController {
     @PostMapping("/reserva")
     public ResponseEntity<ReservaOutputDto> updatePlazas(@RequestBody ReservaOutputDto reserva) throws PlazasInsuficientes, ReservaNoEncontrada {
         try{
-            reservaDisponibleService.updatePlazas(reserva);//no funca
+            reservaDisponibleService.updatePlazas(reserva);
             producer.sendSincronizacion();
             return ResponseEntity.ok().body(reserva);
         }catch (PlazasInsuficientes e){
@@ -49,7 +49,7 @@ public class ReservaDisponibleController {
     }
 
     @PutMapping
-    public ResponseEntity<ReservaDisponibleOutputDto> update(@RequestBody ReservaDisponibleInputDto reserva){
+    public ResponseEntity<ReservaDisponibleOutputDto> update(@RequestBody ReservaDisponibleInputDto reserva) throws PlazasInsuficientes{
         reservaDisponibleService.update(reserva);
         producer.sendSincronizacion();
         return ResponseEntity.ok().body(new ReservaDisponible(reserva).reservaToReservaDisponibleOutputDto());
