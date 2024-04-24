@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.util.Calendar;
 import java.util.Date;
 
 @SpringBootApplication
@@ -25,18 +23,14 @@ public class BackempresaApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		ReservaDisponibleInputDto reservaDisponible1 = new ReservaDisponibleInputDto(1, "Barcelona", new Date(2024-1900, Calendar.APRIL,16), Float.parseFloat("8"), 40);
-		reservaDisponibleRepository.save(new ReservaDisponible(reservaDisponible1));
-
-		ReservaDisponibleInputDto reservaDisponible2 = new ReservaDisponibleInputDto(2, "Barcelona", new Date(2024-1900,Calendar.APRIL,16), Float.parseFloat("12"), 40);
-		reservaDisponibleRepository.save(new ReservaDisponible(reservaDisponible2));
-
-		ReservaDisponibleInputDto reservaDisponible3 = new ReservaDisponibleInputDto(3, "Barcelona", new Date(2024-1900, Calendar.APRIL, 16), Float.parseFloat("16"), 40);
-		reservaDisponibleRepository.save(new ReservaDisponible(reservaDisponible3));
-
-		ReservaDisponibleInputDto reservaDisponible4 = new ReservaDisponibleInputDto(4, "Barcelona", new Date(2024-1900,Calendar.APRIL,16), Float.parseFloat("20"), 40);
-		reservaDisponibleRepository.save(new ReservaDisponible(reservaDisponible4));
-
+		String ciudad = "Valencia";
+		for(int i=1; i<=16;i++){
+			if(i>4 && i<=8) ciudad = "Madrid";
+			if(i>8 && i<=12) ciudad = "Barcelona";
+			if(i>12) ciudad = "Bilbao";
+			ReservaDisponibleInputDto reserva = new ReservaDisponibleInputDto(i, ciudad, new Date(2024-1900,4-1,24), Float.parseFloat("8"), 40);
+			reservaDisponibleRepository.save(new ReservaDisponible(reserva));
+		}
 		kafkaProducerConfig.sendSincronizacion();
 	}
 }

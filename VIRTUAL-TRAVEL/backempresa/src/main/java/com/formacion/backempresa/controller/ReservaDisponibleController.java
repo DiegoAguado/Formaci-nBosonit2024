@@ -59,4 +59,9 @@ public class ReservaDisponibleController {
     public void delete(@PathVariable Integer id){
         reservaDisponibleService.delete(id);
     }
+
+    @PostMapping("/sincronizar")
+    public void sincronizar(){
+        producer.sendSincronizacion();
+    }
 }
